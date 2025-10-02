@@ -13,6 +13,14 @@ pipeline {
     }
 
     stages {
+        stage('Debug Credentials') {
+            steps {
+                script {
+                    echo "Available environment variables:"
+                    sh 'printenv'
+                }
+            }
+        }
         stage('네임스페이스 관리') {
             steps {
                 script{
